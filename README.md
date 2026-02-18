@@ -13,3 +13,14 @@ with open('hello.txt', 'r') as f:
 
 print("ちなみになんでこんなことをしているかというと、ファイルの読み書きの練習をしているからです。")
 print('ちなみにコピペしているだけで、コードの意味は全然分かりません。')
+
+try:
+    f = open('foo.txt', 'r')
+    for r in f:
+        print( r.strip())
+    f.close()
+except FileNotFoundError:
+    print('ファイルが見つかりません')
+except Exception as e:
+    print(e.args)
+    
